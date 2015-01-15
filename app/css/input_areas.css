@@ -9,15 +9,15 @@ input[type="search"],
 input[type="url"],
 input[type="number"],
 textarea {
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 3rem;
-  line-height: 3rem;
+  height: 5rem;
+  line-height: 5rem;
   resize: none;
   padding: 0 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   border: 0.1rem solid #c7c7c7;
   border-radius: 0;
   box-shadow: none; /* override the box-shadow from the system (performance issue) */
@@ -73,13 +73,13 @@ form p textarea + button[type="reset"] {
   top: 0;
   right: -0.3rem;
   width: 3rem;
-  height: 3rem;
+  height: 5rem;
   padding: 0;
   border: none;
   font-size: 0;
   opacity: 0;
   pointer-events: none;
-  background: url(../icons/input/clear.png) no-repeat 50% 50% / 3rem auto;
+  background: url(../images/clear.png) no-repeat 50% 50% / 3rem auto;
 }
 
 .clear_btn {
@@ -87,18 +87,18 @@ form p textarea + button[type="reset"] {
   top: 0;
   right: -0.3rem;
   width: 3rem;
-  height: 3rem;
+  height: 5rem;
   padding: 0;
   border: none;
   font-size: 0;
   opacity: 0;
   pointer-events: none;
-  background: url(../icons/input/clear.png) no-repeat 50% 50% / 2rem auto;
+  background: url(../images/clear.png) no-repeat 50% 50% / 3rem auto;
 }
 
 .skin-dark p input + button[type="reset"],
 .skin-dark p textarea + button[type="reset"] {
-  background-image: url(../icons/input/clear_dark.png);
+  background-image: url(../images/clear_dark.png);
 }
 
 /* To avoid colission with BB butons */
@@ -141,7 +141,7 @@ input[type="datetime-local"] {
   border: 0.1rem solid #c7c7c7;
   width: 100%;
   box-sizing: border-box;
-  font-family: sans-serif;
+/*  font-family: sans-serif;*/
   font-style: italic;
   font-size: 1.6rem;
   margin: 0 0 1.5rem;
@@ -152,7 +152,7 @@ input[type="datetime-local"] {
   height: 4rem;
   color: #333;
   border-radius: 0;
-  background: #fff url(../icons/input/dialog.svg) no-repeat calc(100% - 1rem) calc(100% - 1rem);
+  background: #fff url(../images/dialog.svg) no-repeat calc(100% - 1rem) calc(100% - 1rem);
 }
 
 fieldset legend {
@@ -181,7 +181,7 @@ input[type="date"][disabled],
 input[type="time"][disabled],
 input[type="datetime"][disabled],
 input[type="datetime-local"][disabled] {
-  background-image: url(../icons/input/dialog_disabled.svg);
+  background-image: url(../images/dialog_disabled.svg);
   background-color: transparent
 }
 
@@ -214,7 +214,7 @@ input[type="datetime-local"]:active {
 .skin-dark input[type="datetime"]:active,
 .skin-dark input[type="datetime-local"]:active {
   background-color: #00aacc;
-  background-image: url(../icons/input/dialog_active.svg);
+  background-image: url(../images/dialog_active.svg);
 }
 
 
@@ -274,12 +274,12 @@ form[role="search"] p textarea {
 }
 
 form[role="search"] p input::-moz-placeholder {
-  background: url(../icons/input/search.svg) right -0.5rem center no-repeat;
+  background: url(../images/search.svg) right -0.5rem center no-repeat;
   background-size: 3rem;
 }
 
 form[role="search"].skin-dark p input::-moz-placeholder {
-  background-image: url(../icons/input/search_dark.svg);
+  background-image: url(../images/search_dark.svg);
 }
 
 form[role="search"] p input:focus::-moz-placeholder {
@@ -490,14 +490,14 @@ form button::-moz-focus-inner {
  */
 
 html[dir="rtl"] fieldset legend {
-  background: rgba(0,0,0,0.05) url(../icons/input/dialog_rtl.svg) no-repeat 1rem calc(100% - 1rem);
+  background: rgba(0,0,0,0.05) url(../images/dialog_rtl.svg) no-repeat 1rem calc(100% - 1rem);
 }
 
 html[dir="rtl"] input[type="date"],
 html[dir="rtl"] input[type="time"],
 html[dir="rtl"] input[type="datetime"],
 html[dir="rtl"] input[type="datetime-local"] {
-  background: #fff url(../icons/input/dialog_rtl.svg) no-repeat 1rem calc(100% - 1rem);
+  background: #fff url(../images/dialog_rtl.svg) no-repeat 1rem calc(100% - 1rem);
 }
 
 html[dir="rtl"] fieldset[disabled] legend,
@@ -505,7 +505,7 @@ html[dir="rtl"] input[type="date"][disabled],
 html[dir="rtl"] input[type="time"][disabled],
 html[dir="rtl"] input[type="datetime"][disabled],
 html[dir="rtl"] input[type="datetime-local"][disabled] {
-  background-image: url(../icons/input/dialog_disabled_rtl.svg);
+  background-image: url(../images/dialog_disabled_rtl.svg);
 }
 
 html[dir="rtl"] form p input:focus {
