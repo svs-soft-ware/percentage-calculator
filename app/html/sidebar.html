@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    function loadHtml(page) {
+        $("#main").load(page + ".html");
+    }
+</script>
+<section data-type="sidebar">
+    <header>
+        <menu type="toolbar">
+            <a href="#"><span class="icon icon-back">back</span></a>
+        </menu>
+        <h1>Percentage Calculator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="loadHtml('discount');">Discount</a></li>
+        </ul>
+        <h2>Business Calculator</h2>
+        <ul>
+            <li><a href="#" onclick="loadHtml('vat');">VAT</a></li>
+        </ul>
+    </nav>
+</section>

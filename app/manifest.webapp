@@ -2,7 +2,7 @@
   "name": "% calculator",
   "version": "1.0.2",
   "description": "% calculator is used for calculating discounts",
-  "launch_path": "/index.html",
+  "launch_path": "/html/index.html",
   "developer": {
     "name": "svs.soft.ware",
     "url": "http://subin.comlu.com/"
@@ -12,5 +12,6 @@
   },
   "orientation": [
     "portrait"
-  ]
+  ],
+  "default_locale": "en"
 }

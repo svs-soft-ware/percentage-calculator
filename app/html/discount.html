@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    $(function() {
+        $('#reset_form').click(function() {
+            $("#of").val('');
+            $("#percentage").val('');
+            $('#discount_val').val('');
+            $('#result').val('');
+            discountCalc.validateExecuteDiscount();
+        });
+        $('#percentage').keyup(function() {
+            setTimeout(function() {
+                discountCalc.validateExecuteDiscount();
+            }, 300);
+        });
+        $('#of').keyup(function() {
+            setTimeout(function() {
+                discountCalc.validateExecuteDiscount();
+            }, 300);
+        });
+        discountCalc.init();
+    });
+</script>   
+<section id="drawer" role="region">
+    <header>
+        <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
+        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+        <menu type="toolbar">
+            <button id="reset_form"><span class="icon icon-close">close</span></button>
+        </menu>
+        <h1>Discount</h1>
+    </header>
+    <div role="main">
+        <form action="#" id="percentage_calculator" name="percentage_calculator">            
+            <div>
+                <label for="of">Original</label>
+                <p>
+                    <input data-rule-number="true" data-msg-number="Please enter a valid amount" type="number" name="of" value="" id="of"/>
+                    <button class="clear_btn" type="reset">Clear</button>
+                </p>
+            </div>
+            <div>
+                <label for="percentage">Discount (%)</label>
+                <p>
+                    <input data-rule-number="true" data-msg-number="Please enter a valid discount value" type="number" name="percentage" value="" id="percentage"/>
+                    <button class="clear_btn" type="reset">Clear</button>
+                </p>
+            </div>
+            <div>
+                <label for="result">After</label>
+                <p>
+                    <input type="text" name="result" value="" id="result" disabled readonly="readonly"/>
+                </p>
+            </div>
+            <div>
+                <label for="discount_val">You Save</label>
+                <p>
+                    <input type="text" name="result" value="" id="discount_val" disabled readonly="readonly"/>
+                </p>
+            </div>
+        </form>
+    </div>
+</section>

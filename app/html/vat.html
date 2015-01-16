@@ -1,99 +1,62 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="../css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css/headers.css" />
-        <link rel="stylesheet" type="text/css" href="../css/drawer.css" />
-        <link rel="stylesheet" type="text/css" href="../css/input_areas.css" />
-        <link rel="stylesheet" type="text/css" href="../css/buttons.css" />
-        <link rel="stylesheet" type="text/css" href="../css/responsive.css" />               
-        <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript" src="../js/jquery.validate.js"></script>
-        <script type="text/javascript" src="../js/vat.js"></script>        
-        <title>Percentage Calculator</title>
-        <script type="text/javascript">
-            $(function() {
-                $('#reset_form').click(function() {
-                    $("#net_price").val('');
-                    $("#vat").val('');
-                    $('#tax_amount').val('');
-                    $('#gross_price').val('');
-                    vatCalc.validateExecuteVat();
-                });
-                $('#net_price').keyup(function() {
-                    setTimeout(function() {
-                        vatCalc.validateExecuteVat();
-                    }, 300);
-                });
-                $('#vat').keyup(function() {
-                    setTimeout(function() {
-                        vatCalc.validateExecuteVat();
-                    }, 300);
-                });
-                vatCalc.initVat();
-            });
-        </script>        
-    </head>
-    <body role="application">
-        <section data-type="sidebar">
-            <header>
-                <menu type="toolbar">
-                    <a href="#"><span class="icon icon-back">back</span></a>
-                </menu>
-                <h1>Percentage Calculator</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Discount</a></li>                    
-                </ul>
-                <h2>Business Calculator</h2>
-                <ul>
-                    <li><a href="vat.html">VAT</a></li>
-                </ul>
-            </nav>
-        </section>
-
-        <section id="drawer" role="region">
-            <header>
-                <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
-                <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
-                <menu type="toolbar">
-                    <button id="reset_form"><span class="icon icon-close">close</span></button>
-                </menu>
-                <h1>VAT</h1>
-            </header>
-            <div role="main">
-                <form action="#" id="vat_calculator" name="vat_calculator">            
-                    <div>
-                        <label for="net_price">Net Price</label>
-                        <p>
-                            <input data-rule-number="true" data-msg-number="Please enter a valid price" type="number" name="net_price" value="" id="net_price"/>
-                            <button class="clear_btn" type="reset">Clear</button>
-                        </p>
-                    </div>
-                    <div>
-                        <label for="vat">VAT (%)</label>
-                        <p>
-                            <input data-rule-number="true" data-msg-number="Please enter a valid VAT %" type="number" name="vat" value="" id="vat"/>
-                            <button class="clear_btn" type="reset">Clear</button>
-                        </p>
-                    </div>
-                    <div>
-                        <label for="gross_price">Gross Price</label>
-                        <p>
-                            <input type="text" name="gross_price" value="" id="gross_price" disabled readonly="readonly"/>
-                        </p>
-                    </div>
-                    <div>
-                        <label for="tax_amount">Tax Amount</label>
-                        <p>
-                            <input type="text" name="tax_amount" value="" id="tax_amount" disabled readonly="readonly"/>
-                        </p>
-                    </div>
-                </form>
+<script type="text/javascript">
+    $(function() {
+        $('#reset_form').click(function() {
+            $("#net_price").val('');
+            $("#vat").val('');
+            $('#tax_amount').val('');
+            $('#gross_price').val('');
+            vatCalc.validateExecuteVat();
+        });
+        $('#net_price').keyup(function() {
+            setTimeout(function() {
+                vatCalc.validateExecuteVat();
+            }, 300);
+        });
+        $('#vat').keyup(function() {
+            setTimeout(function() {
+                vatCalc.validateExecuteVat();
+            }, 300);
+        });
+        vatCalc.initVat();
+    });
+</script>        
+<section id="drawer" role="region">
+    <header>
+        <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
+        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+        <menu type="toolbar">
+            <button id="reset_form"><span class="icon icon-close">close</span></button>
+        </menu>
+        <h1>VAT</h1>
+    </header>
+    <div role="main">
+        <form action="#" id="vat_calculator" name="vat_calculator">            
+            <div>
+                <label for="net_price">Net Price</label>
+                <p>
+                    <input data-rule-number="true" data-msg-number="Please enter a valid price" type="number" name="net_price" value="" id="net_price"/>
+                    <button class="clear_btn" type="reset">Clear</button>
+                </p>
             </div>
-        </section>
-    </body>
-</html>
+            <div>
+                <label for="vat">VAT (%)</label>
+                <p>
+                    <input data-rule-number="true" data-msg-number="Please enter a valid VAT %" type="number" name="vat" value="" id="vat"/>
+                    <button class="clear_btn" type="reset">Clear</button>
+                </p>
+            </div>
+            <div>
+                <label for="gross_price">Gross Price</label>
+                <p>
+                    <input type="text" name="gross_price" value="" id="gross_price" disabled readonly="readonly"/>
+                </p>
+            </div>
+            <div>
+                <label for="tax_amount">Tax Amount</label>
+                <p>
+                    <input type="text" name="tax_amount" value="" id="tax_amount" disabled readonly="readonly"/>
+                </p>
+            </div>
+        </form>
+    </div>
+</section>
