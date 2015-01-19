@@ -1,6 +1,6 @@
 {
   "name": "% calculator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "% calculator is used for calculating discounts",
   "launch_path": "/html/index.html",
   "developer": {
