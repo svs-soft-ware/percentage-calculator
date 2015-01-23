@@ -1,0 +1,127 @@
+.title {
+    float: left;
+    color: #fff;
+    position: relative;
+    top: 1px;
+}
+
+header {
+    background-color: #0ac;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 10px 10px 10px 0px;
+    text-decoration: none;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+#content {
+    position: relative;
+    width: auto;
+}
+
+nav {
+    top: 50px;
+    margin-left: -71%;
+    position: fixed;
+    z-index: 101;
+    width: 70%;
+    height: 100%;
+    background: #222222;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #222;
+}
+
+nav li {
+    opacity: 0.85;
+    position: relative;
+    /*padding: 25px;*/
+}
+
+nav li.business{
+    border-left: 2px solid #3B5A97;
+}
+
+nav li.shopping{
+    border-left: 2px solid #D7DFEA;
+}
+
+nav li a {
+    color: #222;
+    text-decoration: none;
+    outline: none;
+}
+
+nav > h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 3.3rem;
+    text-indent: 1rem;
+    color: #fff;
+    background: url(../images/ui/pattern_subheader.png) repeat left top;
+    border-bottom: 0.1rem solid #596068;
+    margin: 0;
+    padding-right: 0.8rem;
+}
+
+nav > ul > li {
+    color: #3a3636;
+    list-style: none;
+    transition: background 0.2s ease;
+}
+
+nav > ul > li:active {
+    background: #0ac;
+    color: #3a3636;
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 1em;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
+    outline: none;
+}
+
+nav > ul > li > a:hover {
+    color: #0ac;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+    outline: none;
+}
+
+#hamburger div {
+    background-color: #fff;
+    height: 3px;
+    margin-top: 3px;
+    width: 90%;
+}
+
+.hamburger-action { 
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#hamburger-overlay {
+    display: none;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    background: #000;
+}

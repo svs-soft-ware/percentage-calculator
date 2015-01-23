@@ -12,7 +12,7 @@ html, body {
     font-family: serif;
 }
 form { 
-    margin: 0.5em; 
+    margin: 0.5em 0.2em 0.2em 0.2em; 
 }
 .clear {
     clear: both;
@@ -26,12 +26,12 @@ form {
     float: right;
 }
 h2.bb-docs {
-    /*font-family: sans-serif;*/
-    padding: 0.4rem 0.5rem;
-    margin: -0.1rem 0 0;
-    border: solid 0.1rem #e8e8e8;
+    padding: 0 0 0 0.5em;
+    margin: 0;
+    /*    border: solid 0.1rem #e8e8e8;*/
+    float: left;
     color: #666;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     background-color: #fff;
 }
@@ -39,4 +39,31 @@ label.error {
     color: #b60303;
     float: right;
     font-size: 1.5rem;
+}
+.reset_form {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    display: block;
+    float: right;
+    font-size: 3rem;
+    font-weight: 400;
+    height: 4rem;
+    line-height: 3rem;
+    margin: 0;
+    min-width: 5rem;
+    overflow: hidden;
+    padding: 0 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: auto;
+    outline: none;
+}
+.content_head {
+    border: solid 0.1rem #e8e8e8;
+    height: 4rem;
+    line-height: 4rem;
 }

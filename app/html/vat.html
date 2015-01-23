@@ -1,62 +1,48 @@
 <script type="text/javascript">
     $(function() {
-        $('#reset_form').click(function() {
-            $("#net_price").val('');
-            $("#vat").val('');
-            $('#tax_amount').val('');
-            $('#gross_price').val('');
-            vatCalc.validateExecuteVat();
-        });
         $('#net_price').keyup(function() {
             setTimeout(function() {
-                vatCalc.validateExecuteVat();
+                var result = JSON.parse(vatCalc.validateExecuteVat());
+                $('#gross_price').val(result.gross_price);
+                $('#tax_amount').val(result.tax_amount);
             }, 300);
         });
         $('#vat').keyup(function() {
             setTimeout(function() {
-                vatCalc.validateExecuteVat();
+                var result = JSON.parse(vatCalc.validateExecuteVat());
+                $('#gross_price').val(result.gross_price);
+                $('#tax_amount').val(result.tax_amount);                
             }, 300);
         });
-        vatCalc.initVat();
     });
 </script>        
-<section id="drawer" role="region">
-    <header>
-        <a href="#"><span class="icon icon-menu">hide sidebar</span></a>
-        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
-        <menu type="toolbar">
-            <button id="reset_form"><span class="icon icon-close">close</span></button>
-        </menu>
-        <h1>VAT</h1>
-    </header>
-    <div role="main">
-        <form action="#" id="vat_calculator" name="vat_calculator">            
-            <div>
-                <label for="net_price">Net Price</label>
-                <p>
-                    <input data-rule-number="true" data-msg-number="Please enter a valid price" type="number" name="net_price" value="" id="net_price"/>
-                    <button class="clear_btn" type="reset">Clear</button>
-                </p>
-            </div>
-            <div>
-                <label for="vat">VAT (%)</label>
-                <p>
-                    <input data-rule-number="true" data-msg-number="Please enter a valid VAT %" type="number" name="vat" value="" id="vat"/>
-                    <button class="clear_btn" type="reset">Clear</button>
-                </p>
-            </div>
-            <div>
-                <label for="gross_price">Gross Price</label>
-                <p>
-                    <input type="text" name="gross_price" value="" id="gross_price" disabled readonly="readonly"/>
-                </p>
-            </div>
-            <div>
-                <label for="tax_amount">Tax Amount</label>
-                <p>
-                    <input type="text" name="tax_amount" value="" id="tax_amount" disabled readonly="readonly"/>
-                </p>
-            </div>
-        </form>
-    </div>
-</section>
+<div role="main">
+    <form action="#" id="percentage_calculator" name="vat_calculator">            
+        <div>
+            <label for="net_price">Net Price</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid price" type="number" name="net_price" value="" id="net_price"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="vat">VAT (%)</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid VAT %" type="number" name="vat" value="" id="vat"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="gross_price">Gross Price</label>
+            <p>
+                <input type="text" name="gross_price" value="" id="gross_price" disabled readonly="readonly"/>
+            </p>
+        </div>
+        <div>
+            <label for="tax_amount">Tax Amount</label>
+            <p>
+                <input type="text" name="tax_amount" value="" id="tax_amount" disabled readonly="readonly"/>
+            </p>
+        </div>
+    </form>
+</div>

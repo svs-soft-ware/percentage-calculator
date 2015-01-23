@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    $(function() {
+        $('#percentage').keyup(function() {
+            setTimeout(function() {
+                var result = JSON.parse(simpleCalc.validateExecute());
+                $('#result').val(result.result);
+            }, 300);
+        });
+        $('#original').keyup(function() {
+            setTimeout(function() {
+                var result = JSON.parse(simpleCalc.validateExecute());
+                $('#result').val(result.result);
+            }, 300);
+        });
+    });
+</script>   
+<div role="main">
+    <form action="#" id="percentage_calculator" name="simple_calculator">
+        <div>
+            <label for="original">Original</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid value" type="number" name="original" value="" id="original"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="percentage">%</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid %" type="number" name="percentage" value="" id="percentage"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="result">Result</label>
+            <p>
+                <input type="text" name="result" value="" id="result" disabled readonly="readonly"/>
+            </p>
+        </div>
+    </form>
+</div>

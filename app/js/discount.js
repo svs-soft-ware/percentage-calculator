@@ -1,6 +1,7 @@
 'use strict';
 
 var discountCalc = (function() {
+    var res = {'saved' : null, 'after' : null};
     function zeroPad(n) {
         var dec = (n.toString()).split(".")[1];
         n = (dec) ? dec : n;
@@ -23,7 +24,7 @@ var discountCalc = (function() {
                 result, disc_val;
 
         if (percentage === '' || of === '') {
-            return;
+            return JSON.stringify(res);
         }
 
         disc_val = calcDiscount(of, percentage);
@@ -31,25 +32,17 @@ var discountCalc = (function() {
         
         result = (of - disc_val);
         result = result.toString() + zeroPad(result);
-        
-        $('#discount_val').val(disc_val);
-        $('#result').val(result);
-        return false;
-    }
-    function init() {
-        getDiscountPrice();
+        res = {'saved' : disc_val, 'after' : result};
+        return JSON.stringify(res);
     }
     function validateExecuteDiscount() {
         var validator = $("#percentage_calculator").validate();
         validator.form();
-        getDiscountPrice();
+        return getDiscountPrice();
     }
     return {
-        init: function() {
-            init();
-        },
         validateExecuteDiscount: function() {
-            validateExecuteDiscount();
+            return validateExecuteDiscount();
         }
     };
 }());

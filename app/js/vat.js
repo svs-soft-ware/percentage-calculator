@@ -1,6 +1,7 @@
 'use strict';
 
 var vatCalc = (function() {
+    var res = {'tax_amount' : null, 'gross_price' : null};
     function zeroPad(n) {
         var dec = (n.toString()).split(".")[1];
         n = (dec) ? dec : n;
@@ -15,7 +16,7 @@ var vatCalc = (function() {
                 gross_price, tax_amount;
 
         if (net_price === '' || vat === '') {
-            return;
+            return JSON.stringify(res);
         }
 
         tax_amount = calcVat(net_price, vat);
@@ -23,26 +24,17 @@ var vatCalc = (function() {
         
         gross_price = parseFloat(net_price) + parseFloat(tax_amount);
         gross_price = gross_price.toString() + zeroPad(gross_price);
-        
-        $('#tax_amount').val(tax_amount);
-        $('#gross_price').val(gross_price);
-        return false;
-    }
-    function initVat() {
-        getVat();
+        res = {'tax_amount' : tax_amount, 'gross_price' : gross_price};        
+        return JSON.stringify(res);
     }
     function validateExecuteVat() {
-        var validator = $("#vat_calculator").validate();
+        var validator = $("#percentage_calculator").validate();
         validator.form();
-        getVat();
+        return getVat();
     }
     return {
-        initVat: function() {
-            initVat();
-        },
         validateExecuteVat: function() {
-            validateExecuteVat();
+            return validateExecuteVat();
         }
     };
 }());
-
