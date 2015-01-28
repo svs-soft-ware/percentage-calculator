@@ -35,7 +35,8 @@
       }
 
       nav.animate({'margin-left': [val]}, {
-        duration: 100
+        duration: 300,
+        easing: 'linear'
       });
 
 //      hamburger.animate({'left': [ham]}, {
@@ -43,7 +44,7 @@
 //      });
 
       overlay.animate({'opacity': [opacity]}, {
-        duration: 100,
+        duration: 300,
         complete: function() {
           overlay.css('display', layer);
         }
