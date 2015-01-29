@@ -1,0 +1,94 @@
+/* 
+    Created on : 29 Jan, 2015, 10:59:49 AM
+    Author     : subin
+*/
+.sidebar {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+}
+
+.content {
+    background: #fff;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: transform .3s;
+}
+
+.content.isOpen { 
+    transform: translate3d(70%, 0, 0);
+}
+
+.button { 
+    cursor: pointer; 
+}
+
+.sidebar_head {
+    background-color: #222;
+    color: #fff;
+    height: 4.95rem;
+    line-height: 4.95rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+nav {
+    height: 100%;
+    background: #222222;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #222;
+}
+
+nav li {
+    opacity: 0.85;
+    position: relative;
+    /*padding: 25px;*/
+}
+
+nav li.business{
+    border-left: 2px solid #3B5A97;
+}
+
+nav li.shopping{
+    border-left: 2px solid #D7DFEA;
+}
+
+nav li a {
+    color: #222;
+    text-decoration: none;
+    outline: none;
+}
+
+nav > ul > li {
+    color: #3a3636;
+    list-style: none;
+    transition: background 0.2s ease;
+}
+
+nav > ul > li:active {
+    background: #0ac;
+    color: #3a3636;
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 1em;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
+    outline: none;
+}
+
+nav > ul > li > a:hover {
+    color: #0ac;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+    outline: none;
+}

@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="../css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css/ham_style.css" />
         <link rel="stylesheet" type="text/css" href="../css/headers.css" />
-        <link rel="stylesheet" type="text/css" href="../css/drawer.css" />
+        <link rel="stylesheet" type="text/css" href="../css/sidebar.css" />
         <link rel="stylesheet" type="text/css" href="../css/input_areas.css" />
-        <link rel="stylesheet" type="text/css" href="../css/responsive.css" />               
+        <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
         <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.sidebar.min.js"></script>
         <script type="text/javascript" src="../js/jquery.clearform.js"></script>
         <script type="text/javascript" src="../js/jquery.validate.js"></script>
         <script type="text/javascript" src="../js/discount.js"></script>
@@ -20,29 +20,31 @@
             $(function() {
                 $("#main").load("discount.html");//Loading side bar
                 $('#reset_form').click(function() {
-                    $('form').clearForm();
-                    $("#percentage_calculator").validate().form();
+                    if ($("#percentage_calculator").length > 0) {
+                        $('form').clearForm();
+                        $("#percentage_calculator").validate().form();
+                    }
+                });
+                $('.button').on('click', function() {
+                    $('.content').toggleClass('isOpen');
+                });
+                $('.sidebar').on('click', function() {
+                    $('.content').toggleClass('isOpen');
+                });
+                $('#header_title').on('click', function() {
+                    $('.content').toggleClass('isOpen');
                 });
             });
             function loadHtml(page, title) {
                 $('#header_title').html(title);
                 $("#main").load(page + ".html");
-                $("#hamburger").trigger("click");
             }
-        </script>        
+        </script>
     </head>
     <body role="application">
-        <div>
-            <section role="region">
-                <header>
-                    <button id="hamburger"><span class="icon icon-menu">menu</span></button>
-                    <menu type="toolbar">
-                        <button id="reset_form"><span class="icon icon-close">add</span></button>
-                    </menu>
-                    <h1 class="title hamburger-action" id="header_title">Discount</h1>
-                </header>
-            </section>
+        <div class='sidebar'>
             <nav class="clear">
+                <div class="sidebar_head">% Calculator</div>
                 <ul>
                     <li class="shopping"><a href="#" onclick="loadHtml('discount', 'Discount');">Discount</a></li>
                 </ul>
@@ -50,16 +52,27 @@
                     <li class="shopping"><a href="#" onclick="loadHtml('simple', 'Simple %');">Simple %</a></li>
                 </ul>
                 <ul>
+                    <li class="shopping"><a href="#" onclick="loadHtml('fraction', 'Fraction to %');">Fraction to %</a></li>
+                </ul>               
+                <ul>
                     <li class="business"><a href="#" onclick="loadHtml('vat', 'VAT');">VAT</a></li>
                 </ul>
                 <ul>
                     <li class="business"><a href="#" onclick="loadHtml('about', 'About');">About</a></li>
                 </ul>                
-            </nav>            
-        </div>        
-        <div id="content">
-            <span id="main"></span>
+            </nav> 
         </div>
-        <script type="text/javascript" src="../js/jquery.hamburger.js"></script>
+        <div class='content'>
+            <section role="region">
+                <header>
+                    <button class="button"><span class="icon icon-menu">menu</span></button>
+                    <menu type="toolbar">
+                        <button id="reset_form"><span class="icon icon-close">add</span></button>
+                    </menu>
+                    <h1 id="header_title">Discount</h1>
+                </header>
+            </section>
+            <span id="main"></span>
+        </div>     
     </body>
 </html>

@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    $(function() {
+        $('#numerator').keyup(function() {
+            setTimeout(function() {
+                var result = JSON.parse(fractionCalc.validateExecute());
+                $('#result').val(result.result);
+            }, 300);
+        });
+        $('#denominator').keyup(function() {
+            setTimeout(function() {
+                var result = JSON.parse(fractionCalc.validateExecute());
+                $('#result').val(result.result);
+            }, 300);
+        });
+    });
+</script>   
+<div role="main">
+    <form action="#" id="percentage_calculator" name="simple_calculator">
+        <div>
+            <label for="numerator">Numerator</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid value" type="number" name="numerator" value="" id="numerator"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="denominator">Denominator</label>
+            <p>
+                <input data-rule-number="true" data-msg-number="Please enter a valid value" type="number" name="denominator" value="" id="denominator"/>
+                <button class="clear_btn" type="reset">Clear</button>
+            </p>
+        </div>
+        <div>
+            <label for="result">%</label>
+            <p>
+                <input type="text" name="result" value="" id="result" disabled readonly="readonly"/>
+            </p>
+        </div>
+    </form>
+</div>
